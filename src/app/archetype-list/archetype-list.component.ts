@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-archetype-list',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./archetype-list.component.css']
 })
 export class ArchetypeListComponent implements OnInit {
+
+  @Input() models: any[] = [];
+
 
   constructor() { }
 

@@ -5,10 +5,15 @@
 <h1>Choose your Archetype</h1>
 <app-search-bar></app-search-bar>
 
-<div *ngIf="cards.length > 0">
+<p><app-filter-button [name]="filter1"></app-filter-button> <app-filter-button [name]="filter2"></app-filter-button></p>
+
+<div *ngIf="people.length > 0">
     <ul>
-        <li *ngFor="let card of cards">
-            {{card}}
-        </li>
+        <!--this would be let model of models and I would pass a model-->
+        <app-archetype-card *ngFor="let person of people" [person]="person" (clickedCard)="getClickedCard($event)"></app-archetype-card>
+
     </ul>
 </div>
+
+
+<app-archetype-list [models]="modelsForList"></app-archetype-list>

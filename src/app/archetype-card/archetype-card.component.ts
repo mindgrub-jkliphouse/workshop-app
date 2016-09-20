@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Person} from "../apiTypes";
 
 @Component({
   selector: 'app-archetype-card',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./archetype-card.component.css']
 })
 export class ArchetypeCardComponent implements OnInit {
+
+  @Input() person;
+  @Output() clickedCard = new EventEmitter<Person>();
+
+  select(person: Person) {
+    this.clickedCard.emit(person);
+  }
 
   constructor() { }
 

@@ -13,6 +13,7 @@ import { ArchetypeFilterComponent } from './archetype-filter/archetype-filter.co
 import { ArchetypeListComponent } from './archetype-list/archetype-list.component';
 import { ArchetypeCardComponent } from './archetype-card/archetype-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FilterButtonComponent } from './filter-button/filter-button.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     ArchetypeFilterComponent,
     ArchetypeListComponent,
     ArchetypeCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    FilterButtonComponent
   ],
   imports: [
     BrowserModule,
