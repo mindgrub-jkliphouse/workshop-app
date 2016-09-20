@@ -4,15 +4,29 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
+import { SelectionScreenComponent } from './selection-screen/selection-screen.component';
+import {Routes, RouterModule, Router} from "@angular/router";
+import { NavbarComponent } from './navbar/navbar.component';
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { path: 'welcome', component: WelcomeScreenComponent },
+  { path: 'selection', component: SelectionScreenComponent },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeScreenComponent,
+    SelectionScreenComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes, { useHash: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
