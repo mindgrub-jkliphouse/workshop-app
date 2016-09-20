@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-character-name',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterNameComponent implements OnInit {
 
-  constructor() { }
+  personBuilder: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.personBuilder = this.formBuilder.group({
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      hobby: ['', Validators.required]
+    });
+  }
+
+  createPerson(): void {
+    console.log('Form Submitted ', this.personBuilder.value);
   }
 
 }

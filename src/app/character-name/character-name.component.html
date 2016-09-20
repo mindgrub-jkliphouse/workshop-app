@@ -1,3 +1,21 @@
-<p>
-  character-name works!
-</p>
+<form [formGroup]="personBuilder" (ngSubmit)="createPerson()">
+  <div class="row">
+    <div class="col s4">
+      <label>Person Name</label>
+      <input id="name" type="text" formControlName="name">
+      <div *ngIf="!personBuilder.controls.name.valid"> no name added</div>
+    </div>
+    <div class="col s4">
+      <label>Age</label>
+      <input id="age" type="number" formControlName="age">
+      <div *ngIf="!personBuilder.controls.age.valid"> no age added</div>
+    </div>
+    <div class="col s4">
+      <label> Hobby</label>
+      <input id="optional" type="text" formControlName="hobby">
+      <div *ngIf="!personBuilder.controls.hobby.valid"> no hobby added</div>
+    </div>
+  </div>
+  <button class="btn" [disabled]="!personBuilder.valid"
+          [class.disabled]="!personBuilder.valid">Create Person</button>
+</form>
