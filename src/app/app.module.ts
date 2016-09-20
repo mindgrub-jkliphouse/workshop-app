@@ -8,6 +8,11 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
 import { SelectionScreenComponent } from './selection-screen/selection-screen.component';
 import {Routes, RouterModule, Router} from "@angular/router";
 import { NavbarComponent } from './navbar/navbar.component';
+import { CharacterNameComponent } from './character-name/character-name.component';
+import { ArchetypeFilterComponent } from './archetype-filter/archetype-filter.component';
+import { ArchetypeListComponent } from './archetype-list/archetype-list.component';
+import { ArchetypeCardComponent } from './archetype-card/archetype-card.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -20,7 +25,12 @@ const appRoutes: Routes = [
     AppComponent,
     WelcomeScreenComponent,
     SelectionScreenComponent,
-    NavbarComponent
+    NavbarComponent,
+    CharacterNameComponent,
+    ArchetypeFilterComponent,
+    ArchetypeListComponent,
+    ArchetypeCardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
