@@ -8,7 +8,10 @@ import {ArchetypeCardComponent} from "../archetype-card/archetype-card.component
 })
 export class SelectionScreenComponent implements OnInit {
 
-  cards: ArchetypeCardComponent[] = [];
+  cards: string[] = [
+      "this should be a card",
+      "this too"
+  ];
 
 
   constructor() { }
