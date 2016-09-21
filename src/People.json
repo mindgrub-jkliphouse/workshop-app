@@ -1,0 +1,20 @@
+[
+  {
+    id: 1,
+    name: "Billy Bob",
+    age: 23,
+    hobby: "eating fish"
+  },
+  {
+    id: 2,
+    name: "John Cappy",
+    age: 32,
+    hobby: "catching fish"
+  },
+  {
+  id: 2,
+  name: "Bill Ford",
+  age: 32,
+  hobby: "Throwing stones"
+}
+]

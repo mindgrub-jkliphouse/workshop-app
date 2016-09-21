@@ -5,7 +5,12 @@
 <h1>Choose your Archetype</h1>
 <app-search-bar></app-search-bar>
 
-<p><app-filter-button [name]="filter1"></app-filter-button> <app-filter-button [name]="filter2"></app-filter-button></p>
+<div *ngIf="filters">
+    <div *ngFor="let filter of filters">
+        <app-filter-button [name]="filter"></app-filter-button>
+    </div>
+
+</div>
 
 <div *ngIf="people.length > 0">
     <ul>

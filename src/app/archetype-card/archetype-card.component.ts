@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {Person} from "../apiTypes";
+import {Person} from "../Services";
 
 @Component({
   selector: 'app-archetype-card',

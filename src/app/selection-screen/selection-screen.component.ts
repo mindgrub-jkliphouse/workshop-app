@@ -1,29 +1,39 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {Person, People} from "../apiTypes";
+import {Person, PeopleService, FilterService} from "../Services";
+import {Response} from "@angular/http";
 
 @Component({
   selector: 'app-selection-screen',
   templateUrl: './selection-screen.component.html',
-  styleUrls: ['./selection-screen.component.css']
+  styleUrls: ['./selection-screen.component.css'],
+    providers: [FilterService, PeopleService]
 })
 
 
 export class SelectionScreenComponent implements OnInit {
 
-    people: Person[] = People;
+    people: Person[];
+    filters: string[];
     modelsForList: Person[] = [];
-
-    filter1: string = "this filter";
-    filter2: string = "that filter";
 
     getClickedCard(person: Person) {
         this.modelsForList.push(person);
     }
 
 
-  constructor() { }
+  constructor(
+      private peopleService: PeopleService,
+      private filterService: FilterService
+  ) { }
 
   ngOnInit() {
+      const peopleObs = this.peopleService.getPeople();
+      peopleObs.subscribe((res: Response) => {
+          console.log(res);
+          this.people = res.json();   // means "parse as JSON"
+      });
+
+      this.filters = this.filterService.getFilters()
   }
 
 }
